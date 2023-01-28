@@ -61,5 +61,8 @@ We can see that logistic regression performs better than DecisionTreeRegressor t
 #### **Final Probability of getting Diabetes**
 ![Screenshot 2023-01-28 at 8 24 13 PM](https://user-images.githubusercontent.com/67644483/215289251-378dc60e-bdd1-44ff-8f77-6c53efaa6864.png)
 
+## About the dataset
+**The data used to create the dataset PimaDiabetes.cv, which is used in the coursework, was originally collected by the National Institute of Diabetes and Digestive and Kidney Diseases in the United States. It includes a 0/1 variable, Outcome, which indicates whether the subject ultimately tested positive for diabetes, along with a list of numerous diagnostic measures recorded from 750 women.**
+
 
 
