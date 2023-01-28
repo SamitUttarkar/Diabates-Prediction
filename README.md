@@ -46,19 +46,19 @@ First we need to check which model performs the best
 We can see that logistic regression performs better than DecisionTreeRegressor therefore we will use it for our further prediction
 
 
-**Confusion Matrix using all the parameters for training**
+#### **Confusion Matrix using all the parameters for training**
 
 ![Screenshot 2023-01-28 at 8 20 17 PM](https://user-images.githubusercontent.com/67644483/215289098-19851516-1ad5-4524-85d9-74b4e4188db3.png)
 
 
-**Feature Selection**
+#### **Feature Selection**
 
 ![Screenshot 2023-01-28 at 8 22 50 PM](https://user-images.githubusercontent.com/67644483/215289185-65741894-f9a7-46b9-a1a8-9d8c86b53cd5.png)
 
 ![Screenshot 2023-01-28 at 8 22 59 PM](https://user-images.githubusercontent.com/67644483/215289191-e07b1f28-df2e-47c6-9d4b-f3a96f47d3d5.png)
 
 
-**Final Probability of getting Diabetes**
+#### **Final Probability of getting Diabetes**
 ![Screenshot 2023-01-28 at 8 24 13 PM](https://user-images.githubusercontent.com/67644483/215289251-378dc60e-bdd1-44ff-8f77-6c53efaa6864.png)
 
 
