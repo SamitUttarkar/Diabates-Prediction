@@ -3,11 +3,13 @@
 # Task
 - Explain the issues in the data with data cleaning and preperation
 - Predicting if the patient is going to develop diabetes based on three or more children indicator i.e. if the mother has more than three children or not and then calculating the probability of developing diabetes given the mother has more than three children and vice verca
-- predicting if the patient is going to develop diabetes based on multiple parameters and choosing the best model to predict it using ToPredict dataset as testing dataset
+- Predicting if the patient is going to develop diabetes based on multiple parameters and choosing the best model to predict it using ToPredict dataset as testing dataset
 
 ## Data Preperation
 The first task is the analyse the data and performe some data cleaning steps 
+
 <img width="793" alt="Screenshot 2023-01-28 at 8 02 20 PM" src="https://user-images.githubusercontent.com/67644483/215288372-d780a6b0-69f0-4e13-b617-78277443d413.png">
+
 -From the above figure we can visualise that there are many zeros in the column Insulin and Skinthickness. It is not possible to get Insulin and Skinthickness as zero therefore I decided the drop these columns as they will not be useful in the prediction process
 - We also replace the missing values with the median for the rest of the columns 
 
@@ -27,6 +29,7 @@ From the pairplot it's difficult the classify based on the scatterplots
 ## Machine Learning
 
 ### Predicting using Three or more kids parameter
+
 In the first step we will create a column called threeormore which indicated wether the patient has more than three children or not 
 Then we calculate probability after the model fitting using logistic regression 
 
@@ -35,6 +38,7 @@ Then we calculate probability after the model fitting using logistic regression
 Bayes rule was used to calculate probability for this step
 
 ### Predicting using multiple paramateres
+
 First we need to check which model performs the best 
 
 ![Screenshot 2023-01-28 at 8 19 17 PM](https://user-images.githubusercontent.com/67644483/215289018-ec5d0a34-cae3-4998-94aa-2559ef90eb53.png)
@@ -48,6 +52,7 @@ We can see that logistic regression performs better than DecisionTreeRegressor t
 
 
 **Feature Selection**
+
 ![Screenshot 2023-01-28 at 8 22 50 PM](https://user-images.githubusercontent.com/67644483/215289185-65741894-f9a7-46b9-a1a8-9d8c86b53cd5.png)
 
 ![Screenshot 2023-01-28 at 8 22 59 PM](https://user-images.githubusercontent.com/67644483/215289191-e07b1f28-df2e-47c6-9d4b-f3a96f47d3d5.png)
