@@ -29,7 +29,6 @@ Bayes rule was used to calculate probability for this step
 
 ### Predicting using multiple paramateres
 First we need to check which model performs the best 
-
 ![Screenshot 2023-01-28 at 8 19 17 PM](https://user-images.githubusercontent.com/67644483/215289018-ec5d0a34-cae3-4998-94aa-2559ef90eb53.png)
 We can see that logistic regression performs better than DecisionTreeRegressor therefore we will use it for our further prediction
 
