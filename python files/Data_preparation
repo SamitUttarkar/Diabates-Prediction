@@ -1,0 +1,120 @@
+# First we import all the necessary libraries 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import missingno as mno
+from sklearn import linear_model
+from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection  import train_test_split
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import accuracy_score, classification_report, roc_curve
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import plot_confusion_matrix
+from sklearn.metrics import mean_squared_error 
+from termcolor import colored
+get_ipython().run_line_magic('matplotlib', 'inline')
+
+
+# In[343]:
+
+
+# we analysise the data and see what values are missing 
+df = pd.read_csv('PimaDiabetes.csv')
+
+
+# In[344]:
+
+
+df.describe()
+
+
+# In[345]:
+
+
+df.info()
+
+
+# In[346]:
+
+
+# here we can see that there are no null values in our data
+df.isnull().any()
+
+
+# In[347]:
+
+
+# Let's take a look at minimum values
+df.min()
+
+
+# In[348]:
+
+
+# ok so here we can see that many of these variables cannot have zero as it is not possible
+# let's count the number of zeros in each column
+
+
+# In[349]:
+
+
+df[df == 0.0].count(0)
+# here as we can see Insulin has almost half of the values zeros and Skin thickness has 30% values zeros which are a lot
+
+
+# In[130]:
+
+
+# # lets replace zeros with NaN so that we can better visualise it 
+# df.loc[df["Glucose"] == 0.0, "Glucose"] = np.NAN
+# df.loc[df["BloodPressure"] == 0.0, "BloodPressure"] = np.NAN
+# df.loc[df["SkinThickness"] == 0.0, "SkinThickness"] = np.NAN
+# df.loc[df["Insulin"] == 0.0, "Insulin"] = np.NAN
+# df.loc[df["BMI"] == 0.0, "BMI"] = np.NAN
+
+
+# In[131]:
+
+
+#mno.matrix(df, figsize = (20, 6))
+# as we can see skinthickness and insulin has many zeros in them 
+
+
+# In[350]:
+
+
+# first let's replace 'glucose' bloodpressure and bmi with medians
+df.Glucose.replace(0,df.Glucose.median(),inplace=True)
+df.BloodPressure.replace(0,df.BloodPressure.median(),inplace=True)
+df.BMI.replace(0,df.BMI.median(),inplace=True)
+
+
+# In[351]:
+
+
+# as we can see there are no zeros left 
+df['Glucose'].min()
+df['BloodPressure'].min()
+df['BMI'].min()
+
+
+# In[352]:
+
+
+df.drop(['Insulin','SkinThickness'],axis=1,inplace=True)
+
+
+# In[353]:
+
+
+df.head()
+
+
+# In[354]:
+
+
+df.isnull().any()
